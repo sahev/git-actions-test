@@ -13,7 +13,8 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
+    outputs:
+      teste: ${{steps.step_one.outputs.FOO}}
     steps:
       - name: Set the value
         id: step_one
@@ -31,4 +32,4 @@ jobs:
       - name: get the value
         id: step_two
         run: |
-          echo "${{ steps.step_one.outputs.FOO }}"
+          echo "${{ needs.build.outputs.teste }}"
