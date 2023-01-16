@@ -23,3 +23,11 @@ jobs:
         id: step_two
         run: |
           echo "${{ steps.step_one.outputs.FOO }}"
+
+  outro:
+    runs-on: ubuntu-latest
+    steps:
+      - name: get the value
+        id: step_two
+        run: |
+          echo "${{ steps.step_one.outputs.FOO }}"
