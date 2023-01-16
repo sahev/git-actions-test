@@ -18,8 +18,8 @@ jobs:
       - name: Set the value
         id: step_one
         run: |
-          echo "FOO=$(whoami)" >> $GITHUB_ENV
+          echo "FOO=$(whoami)" >> $GITHUB_OUTPUT
       - name: Use the value
         id: step_two
         run: |
-          echo "${{ env.FOO }}"
+          echo "${{ steps.step_one.outputs.* }}"
