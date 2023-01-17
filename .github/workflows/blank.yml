@@ -37,12 +37,12 @@ jobs:
   finally:
     runs-on: ubuntu-latest
     needs: outro
+    steps:
       - name: notify of failure
         if: ${{ failure() }}
         with:
-          text: XXX Build failed - Deploy - Server - TEST - Azure Web Apps CI/CD. XXX
-
+          text: ":heavy_check_mark: Build success - Deploy -  Server - TEST - Azure Web pps CI/CD. :heavy_check_mark:"             
       - name: notify of success
         if: ${{ success() }}
         with:
-          text: ":heavy_check_mark: Build success - Deploy -  Server - TEST - Azure Web pps CI/CD. :heavy_check_mark:"                  
+          text: ":heavy_check_mark: Build success - Deploy -  Server - TEST - Azure Web pps CI/CD. :heavy_check_mark:"     
