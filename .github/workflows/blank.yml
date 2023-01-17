@@ -40,9 +40,9 @@ jobs:
     steps:
       - name: notify of failure
         if: ${{ failure() }}
-        with:
-          text: ":heavy_check_mark: Build success - Deploy -  Server - TEST - Azure Web pps CI/CD. :heavy_check_mark:"             
+        run: |
+          echo "erro"
       - name: notify of success
         if: ${{ success() }}
-        with:
-          text: ":heavy_check_mark: Build success - Deploy -  Server - TEST - Azure Web pps CI/CD. :heavy_check_mark:"     
+        run: |
+          echo "succ"
